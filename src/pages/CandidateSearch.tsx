@@ -1,16 +1,9 @@
 import { useState, useEffect } from 'react';
 import './CandidateSearch.css';
 import { searchGithub, searchGithubUser } from '../api/API';
+import { GitHubUser } from '../interfaces/Candidate.interface';
 
-interface GitHubUser {
-  login: string;
-  avatar_url: string;
-  name: string | null;
-  location: string | null;
-  email: string | null;
-  html_url: string;
-  company: string | null;
-}
+
 
 interface BasicUser {
   login: string;

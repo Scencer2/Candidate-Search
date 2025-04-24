@@ -1,16 +1,8 @@
 import { useEffect, useState } from 'react';
 import './SavedCandidates.css';
+import { GitHubUser } from '../interfaces/Candidate.interface';
 
-interface GitHubUser {
-  login: string;
-  avatar_url: string;
-  name: string | null;
-  location: string | null;
-  email: string | null;
-  html_url: string;
-  company: string | null;
-  bio?: string;
-}
+
 
 const SavedCandidates = () => {
   const [saved, setSaved] = useState<GitHubUser[]>([]);
