@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './CandidateSearch.css';
 import { searchGithub, searchGithubUser } from '../api/API';
 
 interface GitHubUser {
@@ -56,19 +57,32 @@ const CandidateSearch = () => {
   }
 
   return (
-    <div style={{ padding: '1rem' }}>
+    <div>
       <h1>Candidate Search</h1>
-      <div style={{ border: '1px solid #ccc', padding: '1rem', marginBottom: '1rem' }}>
-        <img src={currentCandidate.avatar_url} alt="avatar" width="100" />
-        <h2>{currentCandidate.name || 'No name listed'}</h2>
-        <p><strong>Username:</strong> {currentCandidate.login}</p>
-        <p><strong>Location:</strong> {currentCandidate.location || 'N/A'}</p>
-        <p><strong>Email:</strong> {currentCandidate.email || 'N/A'}</p>
-        <p><strong>Company:</strong> {currentCandidate.company || 'N/A'}</p>
-        <p><a href={currentCandidate.html_url} target="_blank">GitHub Profile</a></p>
+
+      <div className="card">
+        <img src={currentCandidate.avatar_url} alt="avatar" />
+        <div className="card-details">
+          <h2>
+            {currentCandidate.name || 'No name listed'}
+            <br />
+            <em>({currentCandidate.login})</em>
+          </h2>
+          <p><strong>Location:</strong> {currentCandidate.location || 'N/A'}</p>
+          <p><strong>Email:</strong> {currentCandidate.email || 'N/A'}</p>
+          <p><strong>Company:</strong> {currentCandidate.company || 'N/A'}</p>
+          <p>
+            <a href={currentCandidate.html_url} target="_blank" rel="noreferrer">
+              GitHub Profile
+            </a>
+          </p>
+        </div>
       </div>
-      <button onClick={handleSave}>+</button>
-      <button onClick={handleSkip}>-</button>
+
+      <div className="button-group">
+        <button onClick={handleSkip} className="skip">−</button>
+        <button onClick={handleSave} className="save">+</button>
+      </div>
     </div>
   );
 };

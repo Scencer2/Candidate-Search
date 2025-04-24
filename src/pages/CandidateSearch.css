@@ -1,0 +1,56 @@
+.card {
+  margin: 2rem auto;
+  background-color: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  max-width: 300px;
+}
+
+.card img {
+  width: 100%;
+  border-bottom: 4px solid black;
+}
+
+.card-details {
+  background-color: black;
+  color: white;
+  text-align: left;
+  padding: 1rem;
+}
+
+.card-details h2 {
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+}
+
+.card-details p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+  margin-top: 1rem;
+}
+
+button.save {
+  background-color: green;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  border: none;
+}
+
+button.skip {
+  background-color: red;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  border: none;
+}
